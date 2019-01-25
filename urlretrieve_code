@@ -17,7 +17,7 @@ r = requests.get('http://www.ivsky.com/tupian/huwai_gongyuan_v50710/', headers=h
 html = etree.HTML(r.text)
 img_urls = html.xpath('.//img/@src') #先找到所有的img
 i = 0
-path = 'D:\Python_Test/test_picture/'
+path = 'D:\Python_Test/test_picture/' #指定下载文件路径
 for img_url in img_urls:
     urllib.request.urlretrieve(img_url, path + 'img%s.jpg' % i, Schedule)
     i += 1
